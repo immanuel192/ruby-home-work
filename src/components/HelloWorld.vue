@@ -5,7 +5,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from '@vue/composition-api';
+import { defineComponent, computed, inject } from '@vue/composition-api';
+import { DI_STORE } from '../share';
 
 export default defineComponent({
   props: {
@@ -13,8 +14,8 @@ export default defineComponent({
   },
   setup(props) {
     const msg = computed(() => props.msg);
-
-    return { msg };
+    const store = inject(DI_STORE);
+    return { msg, store };
   },
 });
 </script>
