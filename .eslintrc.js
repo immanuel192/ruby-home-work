@@ -3,13 +3,15 @@ module.exports = {
   env: {
     node: true,
   },
+  parser: 'vue-eslint-parser',
   extends: [
-    'plugin:vue/essential',
-    '@vue/airbnb',
+    "@vue/airbnb",
     '@vue/typescript/recommended',
   ],
   parserOptions: {
-    ecmaVersion: 2020,
+    parser: "@typescript-eslint/parser",
+    ecmaVersion: 2018,
+    sourceType: "module",
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -17,12 +19,12 @@ module.exports = {
     quotes: 0,
     'space-before-function-paren': 0,
     'import/no-extraneous-dependencies': 1,
+    'import/extensions': 0,
   },
   overrides: [
     {
       files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)',
+        '**/*.spec.ts',
       ],
       env: {
         jest: true,

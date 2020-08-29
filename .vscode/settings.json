@@ -1,6 +1,20 @@
 {
   "eslint.format.enable": true,
   "editor.formatOnSave": true,
+  "eslint.workingDirectories": [
+    "src",
+    "test"
+  ],
+  "eslint.options": {
+    "extensions": [
+      ".html",
+      ".js",
+      ".jsx",
+      ".ts",
+      ".vue"
+    ]
+  },
+  "files.trimFinalNewlines": false,
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",
   "files.insertFinalNewline": true,
@@ -10,7 +24,8 @@
   "vetur.format.defaultFormatter.html": "js-beautify-html",
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
   },
   "eslint.validate": [
     "vue",
