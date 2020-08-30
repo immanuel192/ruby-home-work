@@ -1,9 +1,10 @@
 import { InjectionKey, inject } from '@vue/composition-api';
 import VueRouter from 'vue-router';
 import { Store } from 'vuex';
+import { IAppState } from './store/interface';
 
 export const DI_ROUTER: InjectionKey<VueRouter> = Symbol('router');
-export const DI_STORE: InjectionKey<Store<unknown>> = Symbol('store');
+export const DI_STORE: InjectionKey<Store<IAppState>> = Symbol('store');
 
 export const injectStore = () => {
   const store = inject(DI_STORE);

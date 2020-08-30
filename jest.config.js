@@ -3,4 +3,11 @@ module.exports = {
   testMatch: [
     '**/**/*.spec.ts',
   ],
+  setupFiles: [
+    "<rootDir>/tests/jest-test-util.ts",
+  ],
+  moduleNameMapper: {
+    '^@tests/(.*)$': '<rootDir>/tests/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
 };

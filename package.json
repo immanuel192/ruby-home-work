@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/jest": "^24.0.19",
     "@types/node": "^14.6.2",
+    "@types/chance": "^1.1.0",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-typescript": "~4.4.0",
@@ -26,12 +27,15 @@
     "@vue/cli-service": "~4.4.0",
     "@vue/test-utils": "^1.0.3",
     "eslint": "^7.7.0",
+    "path": "^0.12.7",
+    "chance": "^1.1.7",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^9.5.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
+    "vuex-mock-store": "^0.0.8",
     "vue-template-compiler": "^2.6.11"
   },
   "gitHooks": {

@@ -1,9 +1,3 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-  </div>
-</template>
-
 <script lang="ts">
 import { defineComponent, computed } from '@vue/composition-api';
 import { injectStore } from '../share';
@@ -13,12 +7,20 @@ export default defineComponent({
     msg: String,
   },
   setup(props) {
-    const msg = computed(() => props.msg);
     const store = injectStore();
-    return { msg, store };
+    const message = computed(() => props.msg);
+    const testValue = computed(() => store.state.testValue);
+    return { message, testValue };
   },
 });
 </script>
+
+<template>
+  <div class="hello">
+    <h1>{{ message }}</h1>
+    <h1 class="store-test">{{ testValue }}</h1>
+  </div>
+</template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

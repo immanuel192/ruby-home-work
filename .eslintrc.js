@@ -21,6 +21,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 1,
     'import/extensions': 0,
     'import/no-unresolved': 0,
+    '@typescript-eslint/interface-name-prefix': 0,
   },
   overrides: [
     {
