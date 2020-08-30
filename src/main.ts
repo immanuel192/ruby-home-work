@@ -13,7 +13,7 @@ new Vue({
   store,
   render: (h) => h(App),
   provide: {
-    [DI_ROUTER]: router,
-    [DI_STORE]: store,
+    [DI_ROUTER as symbol]: router,
+    [DI_STORE as symbol]: store,
   },
 }).$mount('#app');
