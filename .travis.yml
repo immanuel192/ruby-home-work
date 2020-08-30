@@ -30,7 +30,8 @@ jobs:
       if: "(branch = master) OR (tag =~ ^v[0-9].*$)"
       name: Deploy
       script:
-        - echo 1
+        - npm run build
+        - echo "Still need to deploy -:)"
 notifications:
   email:
     recipients:
