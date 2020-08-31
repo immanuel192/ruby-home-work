@@ -1,2 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-vue/src/index.scss';
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

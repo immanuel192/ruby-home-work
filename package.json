@@ -12,6 +12,7 @@
     "@vue/composition-api": "^1.0.0-beta.10",
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.16.0",
+    "lodash": "^4.17.20",
     "vue": "^2.6.12",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -20,6 +21,7 @@
     "@types/jest": "^26.0.10",
     "@types/node": "12.12.53",
     "@types/chance": "^1.1.0",
+    "@types/lodash": "^4.14.161",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-typescript": "~4.4.0",
