@@ -1,15 +1,13 @@
 import Vue from 'vue';
 import VueCompositionApi from '@vue/composition-api';
-import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue';
+import './registerServiceWorker';
 import App from './App.vue';
 import router from './router';
 import store from './store';
 import { DI_ROUTER, DI_STORE } from './share';
-import '@/assets/custom.scss';
+import '@/assets/app.less';
 
 Vue.use(VueCompositionApi);
-Vue.use(BootstrapVue);
-Vue.use(BootstrapVueIcons);
 Vue.config.productionTip = true;
 
 new Vue({
