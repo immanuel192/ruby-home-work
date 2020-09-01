@@ -45,42 +45,39 @@ export default defineComponent({
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .row {
+  -ms-flex-wrap: wrap;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
   margin-left: -15px;
+  margin-right: -15px;
 }
 .view {
-  position: relative;
-  overflow: hidden;
   cursor: default;
-
+  overflow: hidden;
+  position: relative;
   i {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
     font-style: normal;
     font-variant: normal;
-    text-rendering: auto;
     line-height: 1;
+    text-rendering: auto;
   }
-
   .fa-10x {
     font-size: 10em;
   }
-
-  .fa-bootstrap:before {
-    content: "\f836";
+  .fa-bootstrap {
+    &:before {
+      content: "\f836";
+    }
   }
-
   .deep-purple-text {
     color: #673ab7 !important;
   }
-
   .dark-grey-text {
     color: #4f4f4f !important;
   }
