@@ -1,9 +1,9 @@
 <script>
 import { defineComponent } from '@vue/composition-api';
 import arcadeCardImage from '@/assets/arcade.jpg';
-import AppstorePage from '@/components/AppstorePage';
-import AppstorePageTitle from '@components/AppstorePageTitle';
-import AppstoreCard from '@/components/AppstoreCard';
+import AppstorePage from '@/components/AppstorePage.vue';
+import AppstorePageTitle from '@/components/AppstorePageTitle.vue';
+import AppstoreCard from '@/components/AppstoreCard.vue';
 
 import { apps, games } from '@/data';
 
@@ -45,7 +45,7 @@ export default defineComponent({
 <template>
   <appstore-page noCollapsedNavbar>
       <appstore-page-title :title="todayDateTitle" :heading="todayDateHeading" accountLink />
-      <div className="appstore-card-grid">
+      <div class="appstore-card-grid">
         <appstore-card
           :image="arcadeCardImage"
           title="5 awesome Apple Arcade puzzle games"
@@ -70,7 +70,7 @@ export default defineComponent({
         </appstore-card>
 
         <appstore-card
-          image="<%= BASE_URL %>static/apps-images/crossy-road-5.jpg"
+          image="/static/apps-images/crossy-road-5.jpg"
           :title="`<span>GAME<br />OF THE<br />DAY</span>`"
           titleColor="#fff"
           titlePosition="bottom"
@@ -84,7 +84,7 @@ export default defineComponent({
         <p>Dolore exercitationem consequuntur excepturi? Voluptatem totam adipisci illum</p>
         </appstore-card>
         <appstore-card
-          image="<%= BASE_URL %>static/apps-images/netflix-7.jpg"
+          image="/static/apps-images/netflix-7.jpg"
           :title="`<span>APP<br />OF THE<br />DAY</span>`"
           titleColor="#fff"
           titlePosition="bottom"
@@ -101,9 +101,9 @@ export default defineComponent({
 
       <appstore-page-title
       :title="yesterdayDateTitle" :heading="yesterdayDateHeading" :accountLink="false" />
-      <div className="appstore-card-grid">
+      <div class="appstore-card-grid">
         <appstore-card
-          image="<%= BASE_URL %>static/apps-images/the-seven-deadly-sins-8.jpg"
+          image="/static/apps-images/the-seven-deadly-sins-8.jpg"
           :title="`<span>GAME<br />OF THE<br />DAY</span>`"
           titleColor="#fff"
           titlePosition="bottom"
@@ -117,7 +117,7 @@ export default defineComponent({
           <p>Dolore exercitationem consequuntur excepturi? Voluptatem totam adipisci .</p>
         </appstore-card>
         <appstore-card
-          image="<%= BASE_URL %>static/apps-images/instagram-5.jpg"
+          image="/static/apps-images/instagram-5.jpg"
           :title="`<span>APP<br />OF THE<br />DAY</span>`"
           titleColor="#000"
           titlePosition="bottom"
