@@ -4,9 +4,8 @@ import Framework7Vue from 'framework7-vue';
 import Framework7, { Device } from './framework7-custom';
 import './registerServiceWorker';
 import App from './App.vue';
-import router from './router';
 import store from './store';
-import { DI_ROUTER, DI_STORE } from './share';
+import { DI_STORE } from './share';
 import './css/framework7-custom.less';
 import 'framework7-icons/css/framework7-icons.css';
 import './css/app.less';
@@ -25,11 +24,9 @@ if ((Device.ios || Device.android) && Device.standalone) {
 }
 
 new Vue({
-  router,
   store,
   render: (h) => h(App),
   provide: {
-    [DI_ROUTER as symbol]: router,
     [DI_STORE as symbol]: store,
   },
 }).$mount('#app');
