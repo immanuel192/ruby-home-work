@@ -22,6 +22,7 @@ module.exports = {
     'import/extensions': 0,
     'import/no-unresolved': 0,
     '@typescript-eslint/interface-name-prefix': 0,
+    "max-len": 1,
   },
   overrides: [
     {
