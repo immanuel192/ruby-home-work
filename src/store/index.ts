@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { IAppState } from './interface';
-import moduleTopic from './topic.module';
+import moduleSubject from './subject.module';
 
 Vue.use(Vuex);
 
@@ -17,6 +17,6 @@ export default new Vuex.Store<IAppState>({
   actions: {
   },
   modules: {
-    topics: moduleTopic(),
+    subjects: moduleSubject(),
   },
 });

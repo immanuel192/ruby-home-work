@@ -1,6 +1,7 @@
 <script lang="ts">
-import { computed, defineComponent } from '@vue/composition-api';
+import { defineComponent, computed, ref } from '@vue/composition-api';
 import { f7Card, f7CardContent } from 'framework7-vue';
+import { games } from '@/data';
 import AppsTableList from './AppsTableList.vue';
 
 export default defineComponent({
@@ -12,8 +13,6 @@ export default defineComponent({
   },
   props: {
     image: String,
-    app: { type: Object, required: false },
-    children: { type: Object, required: false },
     imageAlt: { type: String, required: false, default: '' },
     title: { type: String, required: false, default: '' },
     titleColor: { type: String, required: false, default: '#000' },
@@ -23,21 +22,38 @@ export default defineComponent({
     titlePosition: { type: String, required: false, default: 'top' },
     appColor: { type: String, required: false, default: '#fff' },
     closeButtonColor: { type: String, required: false, default: '#fff' },
+    //
+    apps: { type: Array, required: false, default: () => ([]) },
+    subjectId: { type: String, required: false, default: () => '' },
   },
   setup(props) {
     const titleStyle = {
       color: props.titleColor,
     };
+
     if (props.titleLarge) {
       Object.assign(titleStyle, {
         fontSize: '44px',
         fontWeight: 800,
         lineHeight: 1,
+        "-webkit-text-stroke": "1px white",
       });
     }
 
+    // to fetch the app list
+    const appCrossyRoad = games.find((app) => app.title === 'Crossy Road');
+    const apps = ref(props.apps);
+    if (props.subjectId) {
+      apps.value = [appCrossyRoad];
+    }
+
+    const firstApp = computed(() => apps[0]);
+    const remainingApps = computed(() => apps.value.slice(1));
+
     return {
       titleStyle,
+      firstApp,
+      remainingApps,
     };
   },
 });
@@ -54,21 +70,24 @@ export default defineComponent({
           <div class="appstore-card-subtitle" :style="{color: subtitleColor}">
             {{subtitle}}
           </div>
-          <div class="appstore-card-title" :style="titleStyle" v-html="title">
+          <div
+          class="appstore-card-title"
+          v-if="title"
+          :style="titleStyle" v-html="title">
           </div>
         </div>
-        <apps-table-list
-            v-if="app" :style="{color: appColor}"
-            :apps="[app]" />
+        <apps-table-list v-if="firstApp" :style="{color: appColor}" :apps="[firstApp]" />
       </div>
       <div class="appstore-card-close-button card-opened-fade-in">
         <a href="#" class="link card-close">
-          <i
-            :style="{ color: closeButtonColor }" class="f7-icons">multiply_circle_fill</i>
+          <i :style="{ color: closeButtonColor }" class="f7-icons">multiply_circle_fill</i>
         </a>
       </div>
       <div class="appstore-card-content card-content-padding">
-          <slot></slot>
+        <apps-table-list
+          v-if="remainingApps.length > 0"
+          :style="{color: appColor}"
+          :apps="remainingApps" />
       </div>
     </f7-card-content>
   </f7-card>
@@ -184,7 +203,7 @@ export default defineComponent({
       object-position: center;
       z-index: -1;
       background-color: #ccc;
-      transform: translateX(calc(-1 * var(--card-offset) / 2));
+      // transform: translateX(calc(-1 * var(--card-offset) / 2));
     }
     &-text {
       padding: 16px var(--f7-card-content-padding-horizontal);
@@ -288,6 +307,17 @@ export default defineComponent({
       color: rgba(240, 240, 255, 0.55);
       b, strong, em, h1, h2, h3, h4 {
         color: #fff;
+      }
+    }
+  }
+  .appstore-card-content {
+    .apps-table-list {
+      ul {
+        height: 400px;
+        li {
+          width: 100%;
+          max-width: 635px;
+        }
       }
     }
   }

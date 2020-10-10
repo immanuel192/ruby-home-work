@@ -1,21 +1,32 @@
+import { Store } from 'vuex';
+
 /**
  * App main state
  */
 export interface IAppState {
   testValue: string;
+  subjects?: IModuleSubjectState;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface IAppGetter { }
+export interface IAppGetter {
+  groupedSubjects: {
+    key: string;
+    items: ISubject[];
+  }[];
+}
 
 /** ------ Topics -------- */
-export interface ITopic {
+export interface ISubject {
   id: string;
   name: string;
-  icon: string;
+  group: string;
   enable: boolean;
-  totalNewUpdate: number;
+  totalNewUpdate?: number;
+  styleConfig?: Record<string, any>;
 }
-export interface IModuleTopicState {
-  data: ITopic[];
+export interface IModuleSubjectState {
+  data: ISubject[];
 }
+
+export interface IStore extends Store<IAppState> { getters: IAppGetter }

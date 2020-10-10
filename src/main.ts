@@ -24,7 +24,6 @@ if ((Device.ios || Device.android) && Device.standalone) {
 }
 
 new Vue({
-  store,
   render: (h) => h(App),
   provide: {
     [DI_STORE as symbol]: store,

@@ -1,8 +1,7 @@
 import { InjectionKey, inject } from '@vue/composition-api';
-import { Store } from 'vuex';
-import { IAppState } from './store/interface';
+import { IStore } from './store/interface';
 
-export const DI_STORE: InjectionKey<Store<IAppState>> = Symbol('store');
+export const DI_STORE: InjectionKey<IStore> = Symbol('store');
 
 export const injectStore = () => {
   const store = inject(DI_STORE);
