@@ -16,16 +16,14 @@ export default defineComponent({
   setup() {
     const activeTab = ref('today');
     const refToday = ref(null);
+    const refSubject = ref(null);
     const refGames = ref(null);
     const refApps = ref(null);
-    const refArcade = ref(null);
-    const refSearch = ref(null);
     const refs = reactive({
       today: refToday,
       games: refGames,
       apps: refApps,
-      arcade: refArcade,
-      search: refSearch,
+      subject: refSubject,
     });
     let previousTab = ref('');
 
@@ -65,8 +63,7 @@ export default defineComponent({
       refToday,
       refGames,
       refApps,
-      refArcade,
-      refSearch,
+      refSubject,
       refs,
     };
   },
@@ -81,10 +78,17 @@ export default defineComponent({
         <f7-link
           :click="onTabLinkClick('today')"
           tabLink="#view-today"
-          tabLinkActive
-          iconF7="today"
+          iconF7="calendar_today"
           text="Today"
           ref="refToday"
+        />
+        <f7-link
+          :click="onTabLinkClick('subject')"
+          tabLink="#view-subject"
+          tabLinkActive
+          iconF7="briefcase"
+          text="Subjects"
+          ref="refSubject"
         />
         <f7-link
           :click="onTabLinkClick('games')"
@@ -100,31 +104,15 @@ export default defineComponent({
           text="Apps"
           ref="refApps"
         />
-        <f7-link
-          :click="onTabLinkClick('arcade')"
-          tabLink="#view-arcade"
-          iconF7="gamecontroller_alt_fill"
-          text="Arcade"
-          ref="refArcade"
-        />
-        <f7-link
-          :click="onTabLinkClick('search')"
-          tabLink="#view-search"
-          iconF7="search"
-          text="Search"
-          ref="refSearch"
-        />
       </f7-toolbar>
       <f7-view
-        id="view-today" v-on:tabShow="activeTab='today'" main tab tabActive url="/today/" />
+        id="view-today" v-on:tabShow="activeTab='today'" tab url="/today/" />
+      <f7-view
+        id="view-subject" v-on:tabShow="activeTab='subject'" main tabActive tab url="/subject/" />
       <f7-view
         id="view-games" v-on:tabShow="activeTab='games'" tab url="/games/" />
       <f7-view
         id="view-apps" v-on:tabShow="activeTab='apps'" tab url="/apps/" />
-      <f7-view
-        id="view-arcade" v-on:tabShow="activeTab='arcade'" tab url="/arcade/" />
-      <f7-view
-        id="view-search" v-on:tabShow="activeTab='search'" tab url="/search/" />
     </f7-views>
   </f7-app>
 </template>

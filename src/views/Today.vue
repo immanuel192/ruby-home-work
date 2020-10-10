@@ -54,6 +54,7 @@ export default defineComponent({
           subtitle="Apple Arcade"
           subtitleColor="#000"
           closeButtonColor="#000"
+          :apps="[]"
         >
           <p>
             <b>Lorem ipsum dolor sit amet</b>
@@ -75,7 +76,7 @@ export default defineComponent({
           titleColor="#fff"
           titlePosition="bottom"
           titleLarge
-          :app="appCrossyRoad"
+          :apps="[appCrossyRoad]"
         >
          <p>Obcaecati, libero corrupti! Modi asperiores debitis eius, culpa, quisquam .</p>
          <p>Obcaecati, libero corrupti! Modi asperiores debitis eius, culpa, quisquam .</p>
@@ -89,7 +90,7 @@ export default defineComponent({
           titleColor="#fff"
           titlePosition="bottom"
           titleLarge
-          :app="appNetlfix"
+          :apps="[appNetlfix]"
         >
           <p>Lorem ipsum, <b>dolor sit amet consectetur adipisicing</b> elit. Explicabo s?</p>
           <p>Magnam obcaecati fugit, ullam nostrum in dolore sed ab culpa ipsum architecto?</p>
@@ -108,7 +109,7 @@ export default defineComponent({
           titleColor="#fff"
           titlePosition="bottom"
           titleLarge
-          :app="appSevenSins"
+          :apps="[appSevenSins]"
         >
           <p>Lorem ipsum dolor sit amet <b>consectetur adipisicing elit</b>. Quam corporis?</p>
           <p>Ducimus, eveniet ea adipisci, impedit repellendus rem doloremque minima?</p>
@@ -123,7 +124,7 @@ export default defineComponent({
           titlePosition="bottom"
           titleLarge
           closeButtonColor="#000"
-          :app="appInstagram"
+          :apps="[appInstagram]"
           appColor="#000"
         >
           <p>Lorem ipsum, <b>dolor sit amet consectetur adipisicing</b> elit. Explicabo?</p>

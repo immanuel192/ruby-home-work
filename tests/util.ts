@@ -10,10 +10,10 @@ export * from '@vue/test-utils';
 
 export const suiteName = (file: string) => path.relative(`${__dirname}/../..`, file).split(path.sep).join('#');
 
-/**
- * Default vuex mock instance
- */
-export const mockStore = new Store<IAppState>();
+export type IStoreMock = Store<IAppState, IAppGetter>
+export function createMockStore(): IStoreMock {
+  return new Store<IAppState, IAppGetter>();
+}
 
 interface IShallowMountOptions<
   State extends object = IAppState,
@@ -35,7 +35,7 @@ export const shallowMount = <V extends Vue>
     ...internalOptions,
     provide: {
       ...internalOptions?.provide,
-      [DI_STORE as symbol]: internalOptions?.provide?.store || mockStore,
+      [DI_STORE as symbol]: internalOptions?.provide?.store || createMockStore(),
     },
   });
 };

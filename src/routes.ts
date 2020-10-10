@@ -4,20 +4,16 @@ const routes = [
     asyncComponent: () => import(/* webpackChunkName: "app-today" *//* webpackPreload: true */ '@/views/Today.vue'),
   },
   {
+    path: '/subject/',
+    asyncComponent: () => import(/* webpackChunkName: "app-today" *//* webpackPreload: true */ '@/views/Subject.vue'),
+  },
+  {
     path: '/games/',
     asyncComponent: () => import(/* webpackChunkName: "app-games" *//* webpackPreload: true */ '@/views/Games.vue'),
   },
   {
     path: '/apps/',
     asyncComponent: () => import(/* webpackChunkName: "app-apps" *//* webpackPreload: true */ '@/views/Apps.vue'),
-  },
-  {
-    path: '/arcade/',
-    asyncComponent: () => import(/* webpackChunkName: "app-arcade" *//* webpackPreload: true */ '@/views/Arcade.vue'),
-  },
-  {
-    path: '/search/',
-    asyncComponent: () => import(/* webpackChunkName: "app-search" *//* webpackPreload: true */ '@/views/Search.vue'),
   },
   {
     path: '/app/:id',

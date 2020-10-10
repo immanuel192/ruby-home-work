@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ruby-home-work#src#views#Subject.spec.ts should matched snapshot 1`] = `
+<appstore-page-stub title="" navbarheading="" nocollapsednavbar="true">
+  <appstore-page-title-stub title="subject1" heading="Friday, September 25" accountlink="true"></appstore-page-title-stub>
+  <div class="appstore-card-grid">
+    <appstore-card-stub imagealt="" title="" titlecolor="#000" subtitle="" subtitlecolor="#000" titleposition="top" appcolor="#fff" closebuttoncolor="#fff" apps="" subjectid="id1"></appstore-card-stub>
+    <appstore-card-stub imagealt="" title="" titlecolor="#000" subtitle="" subtitlecolor="#000" titleposition="top" appcolor="#fff" closebuttoncolor="#fff" apps="" subjectid="id2"></appstore-card-stub>
+  </div>
+  <appstore-page-title-stub title="subject2" heading=""></appstore-page-title-stub>
+  <div class="appstore-card-grid">
+    <appstore-card-stub imagealt="" title="" titlecolor="#000" subtitle="" subtitlecolor="#000" titleposition="top" appcolor="#fff" closebuttoncolor="#fff" apps="" subjectid="id3"></appstore-card-stub>
+  </div>
+</appstore-page-stub>
+`;
