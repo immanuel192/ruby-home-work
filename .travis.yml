@@ -24,7 +24,7 @@ jobs:
         - npm run test
         # - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
     - stage: deploy
-      if: "(branch = master) OR (tag =~ ^v[0-9].*$)"
+      # if: "(branch = master) OR (tag =~ ^v[0-9].*$)"
       name: Deploy
       script:
         - npm run build
