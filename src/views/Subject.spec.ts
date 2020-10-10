@@ -1,8 +1,10 @@
+import { ref } from '@vue/composition-api';
 import Subject from '@/views/Subject.vue';
 import {
   shallowMount, suiteName,
   createMockStore, IStoreMock,
 } from '@tests/util';
+import * as reactives from '@/reactive';
 
 describe(suiteName(__filename), () => {
   let store: IStoreMock;
@@ -43,10 +45,9 @@ describe(suiteName(__filename), () => {
       },
     ];
 
-    const date = new Date(1600988142391);
-    jest
-      .spyOn(global, 'Date')
-      .mockImplementationOnce(() => date as any);
+    jest.spyOn(reactives, 'reactiveDate').mockReturnValue({
+      currentDateTitle: ref('Today date'),
+    });
     const wrapper = shallowMount(Subject, {
       provide: { store },
     });
