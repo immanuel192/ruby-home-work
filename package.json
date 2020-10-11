@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "vue-cli-service test:unit",
-    "lint": "eslint src tests --ext .ts"
+    "lint": "eslint src tests --ext .ts",
+    "release": "semantic-release --no-ci"
   },
   "dependencies": {
     "@vue/composition-api": "^1.0.0-beta.10",
@@ -43,6 +44,10 @@
     "path": "^0.12.7",
     "typescript": "~3.9.3",
     "vue-template-compiler": "^2.6.11",
-    "vuex-mock-store": "^0.0.8"
+    "vuex-mock-store": "^0.0.8",
+    "conventional-changelog-angular": "^5.0.11",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "semantic-release": "^17.1.2"
   }
 }
