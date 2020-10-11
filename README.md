@@ -1,6 +1,8 @@
 # ruby-home-work
 Code clone from https://github.com/framework7io/framework7-appstore-react
 
+[![Coverage Status](https://coveralls.io/repos/github/immanuel192/ruby-home-work/badge.svg?branch=master)](https://coveralls.io/github/immanuel192/ruby-home-work?branch=master)
+
 ## Project setup
 ```
 npm install

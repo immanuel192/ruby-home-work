@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "ruby-homework-dev"
+    "default": "ruby-homework-dev",
+    "production": "ruby-homework"
   }
 }
