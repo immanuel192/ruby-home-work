@@ -1,7 +1,7 @@
+[![Coverage Status](https://coveralls.io/repos/github/immanuel192/ruby-home-work/badge.svg?branch=master)](https://coveralls.io/github/immanuel192/ruby-home-work?branch=master)
+
 # ruby-home-work
 Code clone from https://github.com/framework7io/framework7-appstore-react
-
-[![Coverage Status](https://coveralls.io/repos/github/immanuel192/ruby-home-work/badge.svg?branch=master)](https://coveralls.io/github/immanuel192/ruby-home-work?branch=master)
 
 ## Project setup
 ```
@@ -18,9 +18,10 @@ npm run serve
 npm run build
 ```
 
-### Run your unit tests
+### Run your unit
+
 ```
-npm run test:unit
+npm run test
 ```
 
 ### Lints and fixes files
@@ -28,5 +29,17 @@ npm run test:unit
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Release
+
+Release flow:
+- Any changes to `master` will deploy to DEV
+- To release PROD, run `release` task on `master` branch
+
+```
+# Make sure you configured GH_TOKEN / GITHUB_TOKEN in your shell
+# 
+git checkout master
+git pull
+npm run release
+```
+
