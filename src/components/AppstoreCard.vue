@@ -24,7 +24,7 @@ export default defineComponent({
     closeButtonColor: { type: String, required: false, default: '#fff' },
     //
     apps: { type: Array, required: false, default: () => ([]) },
-    subjectId: { type: String, required: false, default: () => '' },
+    subjectId: { type: String, required: false, default: '' },
   },
   setup(props) {
     const titleStyle = {
@@ -47,7 +47,7 @@ export default defineComponent({
       apps.value = [appCrossyRoad];
     }
 
-    const firstApp = computed(() => apps[0]);
+    const firstApp = computed(() => apps.value[0]);
     const remainingApps = computed(() => apps.value.slice(1));
 
     return {

@@ -54,7 +54,7 @@ export default defineComponent({
           subtitle="Apple Arcade"
           subtitleColor="#000"
           closeButtonColor="#000"
-          :apps="[]"
+          :apps="[appInstagram]"
         >
           <p>
             <b>Lorem ipsum dolor sit amet</b>
